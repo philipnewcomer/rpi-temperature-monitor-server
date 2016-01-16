@@ -53,8 +53,8 @@ class TemperatureMonitorGetRequest {
 	 */
 	public function get_raw_records() {
 
-		// Get results from the past month.
-		$cutoff_timestamp = strtotime( 'one month ago' );
+		// Get results from the past week.
+		$cutoff_timestamp = strtotime( 'one week ago' );
 
 		$where = sprintf( '"datetime" >= "%s" ORDER BY datetime DESC',
 			$this->database->timestamp2datetime( $cutoff_timestamp )
