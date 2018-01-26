@@ -1,2 +1,7 @@
-# temperature-monitor-server
-Monitor the temperature at a remote location using a raspberry pi. http://philipnewcomer.net/raspberry-pi-remote-temperature-monitor/
+# Raspberry Pi Temperature Monitor Server
+
+*Monitor the temperature at a remote location using a Raspberry Pi*
+
+This repo contains the server counterpart to the [Temperature Monitor Daemon](https://github.com/philipnewcomer/rpi-temperature-monitor-daemon).
+
+The server is a Laravel app which records temperature readings received from the remote Raspberry Pi device running the [daemon](https://github.com/philipnewcomer/rpi-temperature-monitor-daemon). The server also provides a web interface to view the recorded readings.
