@@ -16,7 +16,7 @@
 					</div>
 
 					<div class="card-footer">
-						<button type="button" class="btn btn-primary btn-sm" v-on:click="getReadings" :disabled="!readings.length">
+						<button type="button" class="btn btn-primary" v-on:click="getReadings" :disabled="!readings.length">
 							Refresh
 						</button>
 					</div>
