@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Reading extends Model
 {
     public $fillable = [
+        'remote_ip',
         'temperature',
         'timestamp'
     ];
@@ -23,6 +24,7 @@ class Reading extends Model
 
         return [
             'human_time_diff' => $datetime->diffForHumans(),
+            'remote_ip' => $this->remote_ip,
             'temperature' => round($this->temperature),
             'timestamp' => $datetime->toDayDateTimeString()
         ];

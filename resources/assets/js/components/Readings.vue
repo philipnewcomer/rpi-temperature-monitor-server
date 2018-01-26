@@ -25,12 +25,13 @@
 		</div>
 
 		<div class="row mt-4 justify-content-center">
-			<div class="col col-md-8 col-lg-6">
+			<div class="col col-md-10 col-lg-8">
 				<table class="table table-bordered table-striped">
 					<thead>
 						<tr>
 							<th scope="col">Date</th>
 							<th scope="col" class="text-right">Reading</th>
+							<th scope="col">Remote IP</th>
 						</tr>
 					</thead>
 
@@ -39,13 +40,18 @@
 							<td>
 								{{ reading.timestamp }}
 							</td>
+
 							<td class="text-right" :class="getTextClass(reading.temperature)">
 								{{ reading.temperature }}
+							</td>
+
+							<td>
+								<code>{{ reading.remote_ip }}</code>
 							</td>
 						</tr>
 
 						<tr v-if="!readings.length">
-							<td colspan="2">
+							<td colspan="3">
 								No readings.
 							</td>
 						</tr>

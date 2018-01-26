@@ -28,6 +28,7 @@ class ReadingsController extends Controller
     public function store(StoreReading $request)
     {
         $reading = new Reading([
+            'remote_ip' => $request->ip(),
             'temperature' => $request->temperature,
             'timestamp' => Carbon::now()
         ]);

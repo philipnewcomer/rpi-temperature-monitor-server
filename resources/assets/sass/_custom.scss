@@ -1,10 +1,14 @@
 .table {
 
-    th:first-child {
-        width: 75%;
-    }
+    th {
+        width: 20%;
 
-    th:last-child {
-        width: 25%;
+        &:first-child {
+            width: 50%;
+        }
+
+        &:last-child {
+            width: 30%;
+        }
     }
 }
