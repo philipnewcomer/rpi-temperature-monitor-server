@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/readings', 'ReadingsController@index');
+Route::post('/readings', 'ReadingsController@store');

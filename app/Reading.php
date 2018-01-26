@@ -1,0 +1,27 @@
+<?php
+
+namespace App;
+
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Model;
+
+class Reading extends Model
+{
+    public $fillable = [
+        'temperature',
+        'timestamp'
+    ];
+
+    public $timestamps = false;
+
+    public function toArray()
+    {
+        $datetime = new Carbon($this->timestamp);
+
+        return [
+            'human_time_diff' => $datetime->diffForHumans(),
+            'temperature' => $this->temperature,
+            'timestamp' => $datetime->toDayDateTimeString()
+        ];
+    }
+}
