@@ -15,7 +15,7 @@ class ReadingsController extends Controller
      */
     public function index()
     {
-        return Reading::orderBy('timestamp', 'desc')->get();
+        return Reading::orderBy('timestamp', 'desc')->limit(100)->get();
     }
 
     /**
