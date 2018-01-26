@@ -12,8 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
-Route::get('/readings', 'ReadingsController@index');
+Route::get('/readings', 'ReadingsController@index')->name('getReadings');
 Route::post('/readings', 'ReadingsController@store');

@@ -20,7 +20,7 @@ class Reading extends Model
 
         return [
             'human_time_diff' => $datetime->diffForHumans(),
-            'temperature' => $this->temperature,
+            'temperature' => round($this->temperature),
             'timestamp' => $datetime->toDayDateTimeString()
         ];
     }
