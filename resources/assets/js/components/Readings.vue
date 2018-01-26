@@ -42,7 +42,7 @@
 							</td>
 
 							<td class="text-right" :class="getTextClass(reading.temperature)">
-								{{ reading.temperature }}
+								{{ reading.temperature }}&deg;
 							</td>
 
 							<td>
