@@ -10,7 +10,7 @@
 
 					<div class="card-body">
 						<h1 class="display-1">
-							<span v-if="readings.length">{{ readings[0].temperature }}&deg;</span>
+							<span :class="getTextClass(readings[0].temperature)" v-if="readings.length">{{ readings[0].temperature }}&deg;</span>
 							<span v-else="readings.length">&nbsp;</span>
 						</h1>
 					</div>
@@ -39,7 +39,7 @@
 							<td>
 								{{ reading.timestamp }}
 							</td>
-							<td class="text-right">
+							<td class="text-right" :class="getTextClass(reading.temperature)">
 								{{ reading.temperature }}
 							</td>
 						</tr>
@@ -59,7 +59,9 @@
 <script>
 	export default {
 		props: [
-			'readingsUrl'
+			'readingsUrl',
+			'dangerLevel',
+			'warningLevel'
 		],
 
 		data() {
@@ -79,6 +81,18 @@
 					.catch(error => {
 						console.log(error);
 					})
+			},
+
+			getTextClass(temperature) {
+				if (temperature < this.dangerLevel) {
+					return 'text-danger';
+				}
+
+				if (temperature < this.warningLevel) {
+					return 'text-warning';
+				}
+
+				return 'text-success';
 			}
 		},
 

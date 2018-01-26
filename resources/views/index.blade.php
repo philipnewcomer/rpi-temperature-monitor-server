@@ -19,7 +19,11 @@
     <body>
 
         <div id="app">
-            <readings readings-url="{{ route('getReadings') }}"></readings>
+            <readings
+                readings-url="{{ route('getReadings') }}"
+                danger-level="{{ \App\Reading::$dangerLevel }}"
+                warning-level="{{ \App\Reading::$warningLevel }}">
+            </readings>
         </div>
 
         <!-- Scripts -->

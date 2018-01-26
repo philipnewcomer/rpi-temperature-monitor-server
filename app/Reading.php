@@ -14,6 +14,9 @@ class Reading extends Model
 
     public $timestamps = false;
 
+    public static $warningLevel = 40;
+    public static $dangerLevel = 32;
+
     public function toArray()
     {
         $datetime = new Carbon($this->timestamp);
