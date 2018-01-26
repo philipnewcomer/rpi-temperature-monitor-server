@@ -5,10 +5,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <!-- CSRF Token -->
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
+        <title>Laravel {{ app()->version() }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+
+        <!-- Styles -->
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
         <!-- Styles -->
         <style>
@@ -59,27 +65,45 @@
                 text-transform: uppercase;
             }
 
+            .versioninfo {
+                color: #636b6f;
+                padding: 0 25px;
+                font-size: 12px;
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+            }
+
+            .framwork_title {
+                font-weight: 600;
+                padding-top: 20px;
+            }
+
+
             .m-b-md {
                 margin-bottom: 30px;
             }
         </style>
     </head>
     <body>
+
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @auth
+                    @if (Auth::check())
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+                        <a href="{{ url('/login') }}">Login</a>
+                        <a href="{{ url('/register') }}">Register</a>
+                    @endif
                 </div>
             @endif
 
             <div class="content">
+
                 <div class="title m-b-md">
                     Laravel
+                    <p class="versioninfo">Version {{ app()->version() }}</p>
                 </div>
 
                 <div class="links">
@@ -89,7 +113,12 @@
                     <a href="https://forge.laravel.com">Forge</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+
             </div>
         </div>
+
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}"></script>
+
     </body>
 </html>

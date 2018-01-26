@@ -1,5 +1,5 @@
-
 window._ = require('lodash');
+import Popper from 'popper.js/dist/umd/popper.js';
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -9,8 +9,9 @@ window._ = require('lodash');
 
 try {
     window.$ = window.jQuery = require('jquery');
-
-    require('bootstrap-sass');
+    window.Tether = require('tether');
+    window.Popper = Popper;
+    require('bootstrap');
 } catch (e) {}
 
 /**
@@ -49,7 +50,5 @@ if (token) {
 
 // window.Echo = new Echo({
 //     broadcaster: 'pusher',
-//     key: 'your-pusher-key',
-//     cluster: 'mt1',
-//     encrypted: true
+//     key: 'your-pusher-key'
 // });

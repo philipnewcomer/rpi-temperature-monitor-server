@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "b7904d07d1e1765a0a199aa11d6301a3",
+    "content-hash": "c442b0e28987adc12e6d45ff589f4ba9",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -405,6 +405,49 @@
                 }
             ],
             "time": "2015-04-20T18:58:01+00:00"
+        },
+        {
+            "name": "laravel-frontend-presets/bootstrap-4",
+            "version": "0.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-frontend-presets/laravel-preset-bootstrap4.git",
+                "reference": "74af9e3ac454be03aed5e12598f26c60a7808c5b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-frontend-presets/laravel-preset-bootstrap4/zipball/74af9e3ac454be03aed5e12598f26c60a7808c5b",
+                "reference": "74af9e3ac454be03aed5e12598f26c60a7808c5b",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.5.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "LaravelFrontendPresets\\Bootstrap4Preset\\Bootstrap4PresetServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LaravelFrontendPresets\\Bootstrap4Preset\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Laravel 5.5.x Front-end preset for Bootstrap 4",
+            "keywords": [
+                "bootstrap 4",
+                "laravel",
+                "preset",
+                "scaffolding"
+            ],
+            "time": "2017-11-16T15:56:12+00:00"
         },
         {
             "name": "laravel/framework",
