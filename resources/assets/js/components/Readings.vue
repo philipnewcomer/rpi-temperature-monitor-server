@@ -72,13 +72,17 @@
 
 		data() {
 			return {
-				readings: []
+				readings: [],
+				timer: null
 			}
 		},
 
 		methods: {
 			getReadings() {
 				this.readings = [];
+
+				window.clearTimeout(this.timer);
+				this.timer = window.setTimeout(this.getReadings, 15000);
 
 				return axios.get(this.readingsUrl)
 					.then(response => {
