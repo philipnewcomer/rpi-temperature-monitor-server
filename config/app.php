@@ -228,4 +228,5 @@ return [
 
     ],
 
+    'remote_secret_key' => env('REMOTE_SECRET_KEY', null)
 ];

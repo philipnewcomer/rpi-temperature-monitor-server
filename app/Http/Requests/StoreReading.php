@@ -24,7 +24,7 @@ class StoreReading extends FormRequest
     public function rules()
     {
         return [
-            'secret_key' => 'required|in:' . env('SECRET_KEY', null),
+            'secret_key' => 'required|in:' . config('app.remote_secret_key'),
             'temperature' => 'required|numeric'
         ];
     }

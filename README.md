@@ -9,4 +9,4 @@ The server is a Laravel app which records temperature readings received from the
 ## Setup
 
  1. Install the app in the standard Laravel way.
- 2. Configure `SECRET_KEY` in the app's `.env` file.
+ 2. Configure `REMOTE_SECRET_KEY` in the app's `.env` file.
